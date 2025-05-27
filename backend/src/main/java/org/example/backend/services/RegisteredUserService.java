@@ -1,10 +1,12 @@
 package org.example.backend.services;
 
+import org.example.backend.exceptions.UserDoesNotExistException;
 import org.example.backend.model.RegisteredUser;
 import org.example.backend.repository.RegisteredUserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RegisteredUserService {
@@ -12,11 +14,16 @@ public class RegisteredUserService {
 
 
     public List<RegisteredUser> readAll(){
-        return null;
+        return registeredUserRepository.findAll();
     }
 
     public RegisteredUser read(String id){
-        return null;
+        Optional<RegisteredUser> user = registeredUserRepository.findById(id);
+        if(user.isEmpty()) {
+            throw new UserDoesNotExistException();
+        }
+
+        return user.get();
     }
 
     public RegisteredUser update(String id, RegisteredUser registeredUser){
@@ -24,7 +31,8 @@ public class RegisteredUserService {
     }
 
     public RegisteredUser create(RegisteredUser registeredUser){
-        return null;
+        return registeredUserRepository.save(registeredUser);
+
     }
 
     public RegisteredUser delete(String id){

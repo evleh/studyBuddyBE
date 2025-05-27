@@ -2,6 +2,7 @@ package org.example.backend.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -10,6 +11,7 @@ import java.util.UUID;
 public class RegisteredUser {
     @Id
     private String id;
+    @NotBlank
     private String username;
     private String foto;
     private String salutation;  // Anrede
