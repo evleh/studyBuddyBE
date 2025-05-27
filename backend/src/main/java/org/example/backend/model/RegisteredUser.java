@@ -1,9 +1,10 @@
 package org.example.backend.model;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class RegisteredUser {
-    private String UUID;
+    private String id;
     private String username;
     private String foto;
     private String salutation;  // Anrede
@@ -14,11 +15,11 @@ public class RegisteredUser {
     private LocalDateTime lastLogin;
 
     public RegisteredUser() {
-        this.UUID = UUID;
+        this.id = UUID.randomUUID().toString();;
     }
 
-    public RegisteredUser(String UUID, String username, String foto, String salutation, String firstname, String lastname, String password, String country, LocalDateTime lastLogin) {
-        this.UUID = UUID;
+    public RegisteredUser(String username, String foto, String salutation, String firstname, String lastname, String password, String country, LocalDateTime lastLogin) {
+        this.id = UUID.randomUUID().toString();;
         this.username = username;
         this.foto = foto;
         this.salutation = salutation;
@@ -29,12 +30,12 @@ public class RegisteredUser {
         this.lastLogin = lastLogin;
     }
 
-    public String getUUID() {
-        return UUID;
+    public String getId() {
+        return id;
     }
 
-    public void setUUID(String UUID) {
-        this.UUID = UUID;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUsername() {
