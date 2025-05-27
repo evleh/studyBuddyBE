@@ -2,18 +2,18 @@ package org.example.backend.model;
 
 import java.util.UUID;
 
-public class Kartei {
+public class Topic {
     private String id;
     private String name;
     private String description;
     private boolean publicAccess;
     private String ownerID;
 
-    public Kartei() {
+    public Topic() {
         this.id = UUID.randomUUID().toString();
     }
 
-    public Kartei(String name, String description, boolean publicAccess, String ownerID) {
+    public Topic(String name, String description, boolean publicAccess, String ownerID) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
         this.description = description;
