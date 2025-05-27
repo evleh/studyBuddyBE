@@ -15,11 +15,11 @@ public class RegisteredUser {
     private LocalDateTime lastLogin;
 
     public RegisteredUser() {
-        this.id = UUID.randomUUID().toString();;
+        this.id = UUID.randomUUID().toString();
     }
 
     public RegisteredUser(String username, String foto, String salutation, String firstname, String lastname, String password, String country, LocalDateTime lastLogin) {
-        this.id = UUID.randomUUID().toString();;
+        this.id = UUID.randomUUID().toString();
         this.username = username;
         this.foto = foto;
         this.salutation = salutation;
