@@ -1,9 +1,14 @@
 package org.example.backend.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Entity
 public class RegisteredUser {
+    @Id
     private String id;
     private String username;
     private String foto;

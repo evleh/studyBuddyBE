@@ -1,13 +1,20 @@
 package org.example.backend.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.util.UUID;
 
+@Entity
 public class Topic {
+
+    @Id
     private String id;
+    private String ownerID;
     private String name;
     private String description;
     private boolean publicAccess;
-    private String ownerID;
+
 
     public Topic() {
         this.id = UUID.randomUUID().toString();
